@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Producto, Cliente, Pedido
-from .forms import ProductoForm, ClienteForm, PedidoForm
+from .models import Producto
+from .forms import ClienteForm, PedidoForm
 
 def lista_productos(request):
     productos = Producto.objects.all()

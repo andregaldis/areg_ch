@@ -1,0 +1,29 @@
+<!-- templates/main/registro_cliente.html -->
+{% extends 'main/base.html' %}
+
+{% block title %}Registro de Cliente{% endblock %}
+
+{% block content %}
+  <h1>Registro de Cliente</h1>
+  <form method="post" action="{% url 'registro_cliente' %}">
+    
+    
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" required>
+    <br>
+    
+    <label for="correo">Correo Electrónico:</label>
+    <input type="email" name="correo" id="correo" required>
+    <br>
+    
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" name="contrasena" id="contrasena" required>
+    <br>
+    
+    <label for="direccion">Dirección:</label>
+    <textarea name="direccion" id="direccion" required></textarea>
+    <br>
+    
+    <input type="submit" value="Registrarse">
+  </form>
+

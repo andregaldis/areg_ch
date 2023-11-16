@@ -1,0 +1,30 @@
+<!-- templates/main/crear_pedido.html -->
+{% extends 'main/base.html' %}
+
+{% block title %}Crear Pedido{% endblock %}
+
+{% block content %}
+  <h1>Crear Pedido</h1>
+  <form method="post" action="{% url 'crear_pedido' %}">
+    {% csrf_token %}
+    
+    <label for="producto">Producto:</label>
+    <select name="producto" id="producto">
+      {% for producto in productos %}
+        <option value="{{ producto.id }}">{{ producto.nombre }}</option>
+      {% endfor %}
+    </select>
+    <br>
+    
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" name="cantidad" id="cantidad" required>
+    <br>
+    
+    <label for="envio_rapido">Envío Rápido:</label>
+    <input type="checkbox" name="envio_rapido" id="envio_rapido">
+    <br>
+    
+    <input type="submit" value="Crear Pedido">
+  </form>
+{% endblock %}
+
